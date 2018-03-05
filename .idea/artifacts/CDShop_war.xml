@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="CDShop:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="cd.war">
+      <element id="artifact" artifact-name="CDShop:war exploded" />
+    </root>
+  </artifact>
+</component>
