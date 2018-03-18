@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="0.0" y="0.0">at.htl.cdshop.entity.Track</node>
+    <node x="118.0" y="0.0">at.htl.cdshop.entity.Band</node>
+    <node x="70.4375" y="339.0">at.htl.cdshop.entity.CD</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="at.htl.cdshop.entity.Track" target="at.htl.cdshop.entity.CD">
+      <point x="12.25" y="18.5" />
+      <point x="61.25" y="67.0" />
+      <point x="92.375" y="67.0" />
+      <point x="-15.5625" y="-18.5" />
+    </edge>
+    <edge source="at.htl.cdshop.entity.CD" target="at.htl.cdshop.entity.Band">
+      <point x="15.5625" y="-18.5" />
+      <point x="123.5" y="67.0" />
+      <point x="154.375" y="67.0" />
+      <point x="-12.125" y="18.5" />
+    </edge>
+    <edge source="at.htl.cdshop.entity.Band" target="at.htl.cdshop.entity.CD">
+      <point x="12.125" y="18.5" />
+      <point x="178.625" y="77.0" />
+      <point x="133.875" y="77.0" />
+      <point x="25.9375" y="-18.5" />
+    </edge>
+    <edge source="at.htl.cdshop.entity.CD" target="at.htl.cdshop.entity.Track">
+      <point x="-36.3125" y="-18.5" />
+      <point x="71.625" y="87.0" />
+      <point x="12.25" y="87.0" />
+      <point x="-36.75" y="18.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="416.5" y="323.5" />
+  <SelectedNodes>
+    <node>at.htl.cdshop.entity.CD</node>
+  </SelectedNodes>
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
