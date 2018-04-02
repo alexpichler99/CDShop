@@ -1,13 +1,15 @@
 package at.htl.cdshop.business;
 
-import at.htl.cdshop.entity.Band;
-import at.htl.cdshop.entity.CD;
-import at.htl.cdshop.entity.Track;
+import at.htl.cdshop.entity.*;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.Singleton;
 import javax.ejb.Startup;
 import javax.inject.Inject;
+import java.sql.Date;
+import java.time.LocalDate;
+import java.util.LinkedList;
+import java.util.List;
 
 @Startup
 @Singleton
@@ -20,6 +22,15 @@ public class Initbean {
 
     @Inject
     TrackFacade trackFacade;
+
+    @Inject
+    CustomerFacade customerFacade;
+
+    @Inject
+    OrderFacade orderFacade;
+
+    @Inject
+    OrderItemFacade orderItemFacade;
 
     @PostConstruct
     private void init() {
@@ -56,5 +67,28 @@ public class Initbean {
         trackFacade.save(t6);
         trackFacade.save(t7);
         trackFacade.save(t8);
+
+        Customer c1 = new Customer("Max", "Mustermann");
+        customerFacade.save(c1);
+
+        Order o1 = new Order(c1, Date.valueOf(LocalDate.now()));
+
+        OrderItem oi1 = new OrderItem(o1, cd);
+        OrderItem oi2 = new OrderItem(o1, cd1);
+
+        List<OrderItem> l = new LinkedList<>();
+        l.add(oi1);
+        l.add(oi2);
+        orderItemFacade.save(oi1);
+        orderItemFacade.save(oi2);
+
+        o1.setOrderItems(l);
+
+        orderFacade.save(o1);
+
+        List<Order> li = new LinkedList<Order>();
+        li.add(o1);
+
+        c1.setOrders(li);
     }
 }

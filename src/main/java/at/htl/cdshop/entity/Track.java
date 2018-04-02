@@ -3,7 +3,6 @@ package at.htl.cdshop.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "TRACK")
 @NamedQueries(
         @NamedQuery(name = "Track.findByCD", query = "select track from Track track " +
                 "join fetch track.cd where track.cd = :CD")

@@ -1,12 +1,10 @@
 package at.htl.cdshop.entity;
 
-import javax.inject.Named;
 import javax.persistence.*;
 import java.util.LinkedList;
 import java.util.List;
 
 @Entity
-@Table(name = "CD")
 public class CD {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

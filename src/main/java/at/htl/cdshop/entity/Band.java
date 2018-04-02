@@ -1,13 +1,11 @@
 package at.htl.cdshop.entity;
 
-import javax.inject.Named;
 import javax.persistence.*;
 import javax.validation.constraints.Digits;
 import java.util.LinkedList;
 import java.util.List;
 
 @Entity
-@Table(name = "BAND")
 @NamedQueries(
         @NamedQuery(name = "Band.findAll", query = "select b from Band b")
 )
