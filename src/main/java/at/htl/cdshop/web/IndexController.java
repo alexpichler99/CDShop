@@ -9,6 +9,7 @@ import at.htl.cdshop.entity.Track;
 import javax.enterprise.inject.Model;
 import javax.faces.bean.RequestScoped;
 import javax.inject.Inject;
+import java.util.LinkedList;
 import java.util.List;
 
 @Model
@@ -33,6 +34,16 @@ public class IndexController {
     public List<Band> findAllBands() {
         List<Band> b = bandFacade.findAll();
         return b;
+    }
+
+    public List<CD> findAllCDs() {
+        List<CD> cds = new LinkedList<>();
+        List<Band> bands = findAllBands();
+
+        for (Band b : bands)
+            cds.addAll(b.getCds());
+
+        return cds;
     }
 
     public List<Track> findTracksByCD(CD cd) {
