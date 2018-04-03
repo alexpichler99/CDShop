@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.sql.Date;
+import java.util.LinkedList;
 import java.util.List;
 
 @Entity
@@ -18,8 +19,10 @@ public class Order {
     @JsonIgnore
     private Customer customer;
 
-    @OneToMany
-    private List<OrderItem> orderItems;
+    @OneToMany(fetch = FetchType.EAGER,
+            mappedBy = "order",
+            cascade = CascadeType.ALL)
+    private List<OrderItem> orderItems = new LinkedList<>();
 
     private Date orderDate;
 
@@ -29,6 +32,16 @@ public class Order {
     public Order(Customer customer, Date orderDate) {
         this.customer = customer;
         this.orderDate = orderDate;
+    }
+
+    public void addOrderItem(OrderItem orderItem) {
+        orderItems.add(orderItem);
+        orderItem.setOrder(this);
+    }
+
+    public void removeOrderItem(OrderItem orderItem) {
+        orderItems.remove(orderItem);
+        orderItem.setOrder(null);
     }
 
     public Long getId() {

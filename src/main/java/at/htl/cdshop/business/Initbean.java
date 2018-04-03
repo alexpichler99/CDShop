@@ -113,13 +113,11 @@ public class Initbean {
         OrderItem oi3 = new OrderItem(o1, cd2);
         OrderItem oi4 = new OrderItem(o1, cd3);
 
-        List<OrderItem> l1 = new LinkedList<>();
-        l1.add(oi3);
-        l1.add(oi4);
         orderItemFacade.save(oi3);
         orderItemFacade.save(oi4);
 
-        o2.setOrderItems(l1);
+        o2.addOrderItem(oi3);
+        o2.addOrderItem(oi4);
 
         orderFacade.save(o2);
 
