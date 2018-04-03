@@ -16,6 +16,8 @@ public class OrderItem {
     private Order order;
 
     @ManyToOne
+    @JoinColumn(name = "cd_id")
+    @JsonIgnore
     private CD cd;
 
     public OrderItem(Order order, CD cd) {
