@@ -7,7 +7,7 @@ import java.util.List;
 
 @Entity
 @NamedQueries(
-        @NamedQuery(name = "Band.findAll", query = "select b from Band b")
+        @NamedQuery(name = "Band.findAll", query = "select b from Band b join fetch b.cds")
 )
 public class Band {
     @Id
@@ -19,7 +19,9 @@ public class Band {
     @Digits(integer = 4, fraction = 0)
     private int yearFounded;
 
-    @OneToMany(fetch = FetchType.EAGER)
+    @OneToMany(fetch = FetchType.LAZY,
+                mappedBy = "band",
+                cascade = CascadeType.ALL)
     private List<CD> cds = new LinkedList<>();
 
     public Band() {

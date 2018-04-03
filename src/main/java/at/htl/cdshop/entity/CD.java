@@ -12,7 +12,8 @@ public class CD {
 
     private String title;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "band_id")
     private Band band;
 
     @OneToMany

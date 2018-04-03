@@ -4,40 +4,53 @@
   <OriginalElement />
   <nodes>
     <node x="0.0" y="0.0">at.htl.cdshop.entity.Track</node>
-    <node x="118.0" y="0.0">at.htl.cdshop.entity.Band</node>
-    <node x="70.4375" y="339.0">at.htl.cdshop.entity.CD</node>
+    <node x="59.75318534309696" y="244.7639313172345">at.htl.cdshop.entity.OrderItem</node>
+    <node x="62.73275862347049" y="398.5032558367246">at.htl.cdshop.entity.Order</node>
+    <node x="39.84973268517521" y="550.325784950036">at.htl.cdshop.entity.Customer</node>
+    <node x="185.1009286154578" y="13.929477330657733">at.htl.cdshop.entity.Band</node>
+    <node x="93.16393039134002" y="99.28938171189193">at.htl.cdshop.entity.CD</node>
   </nodes>
   <notes />
   <edges>
-    <edge source="at.htl.cdshop.entity.Track" target="at.htl.cdshop.entity.CD">
-      <point x="12.25" y="18.5" />
-      <point x="61.25" y="67.0" />
-      <point x="92.375" y="67.0" />
-      <point x="-15.5625" y="-18.5" />
+    <edge source="at.htl.cdshop.entity.Customer" target="at.htl.cdshop.entity.Order">
+      <point x="-5.012829510076749" y="0.0" />
+      <point x="-5.012829510076752" y="0.0" />
+    </edge>
+    <edge source="at.htl.cdshop.entity.OrderItem" target="at.htl.cdshop.entity.Order">
+      <point x="15.038488530230262" y="0.0" />
+      <point x="15.03848853023026" y="0.0" />
     </edge>
     <edge source="at.htl.cdshop.entity.CD" target="at.htl.cdshop.entity.Band">
-      <point x="15.5625" y="-18.5" />
-      <point x="123.5" y="67.0" />
-      <point x="154.375" y="67.0" />
-      <point x="-12.125" y="18.5" />
+      <point x="-2.6129767958128616" y="-3.0285891541348917" />
+      <point x="-2.6129767958128554" y="-3.0285891541348917" />
     </edge>
-    <edge source="at.htl.cdshop.entity.Band" target="at.htl.cdshop.entity.CD">
-      <point x="12.125" y="18.5" />
-      <point x="178.625" y="77.0" />
-      <point x="133.875" y="77.0" />
-      <point x="25.9375" y="-18.5" />
+    <edge source="at.htl.cdshop.entity.Track" target="at.htl.cdshop.entity.CD">
+      <point x="19.81120480408599" y="2.8421709430404007E-14" />
+      <point x="19.811204804085982" y="0.0" />
+    </edge>
+    <edge source="at.htl.cdshop.entity.Order" target="at.htl.cdshop.entity.Customer">
+      <point x="15.038488530230262" y="0.0" />
+      <point x="15.03848853023026" y="0.0" />
+    </edge>
+    <edge source="at.htl.cdshop.entity.Order" target="at.htl.cdshop.entity.OrderItem">
+      <point x="-5.012829510076752" y="0.0" />
+      <point x="-5.012829510076755" y="-0.0" />
+    </edge>
+    <edge source="at.htl.cdshop.entity.OrderItem" target="at.htl.cdshop.entity.CD">
+      <point x="5.012787174830066" y="-0.0" />
+      <point x="5.012787174830068" y="0.0" />
     </edge>
     <edge source="at.htl.cdshop.entity.CD" target="at.htl.cdshop.entity.Track">
-      <point x="-36.3125" y="-18.5" />
-      <point x="71.625" y="87.0" />
-      <point x="12.25" y="87.0" />
-      <point x="-36.75" y="18.5" />
+      <point x="-3.785736442668626" y="3.266220994766087" />
+      <point x="-3.7857364426686217" y="3.266220994766087" />
+    </edge>
+    <edge source="at.htl.cdshop.entity.Band" target="at.htl.cdshop.entity.CD">
+      <point x="6.123284380343122" y="-2.8421709430404007E-14" />
+      <point x="6.123284380343144" y="0.0" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="1.0" x="416.5" y="323.5" />
-  <SelectedNodes>
-    <node>at.htl.cdshop.entity.CD</node>
-  </SelectedNodes>
+  <settings layout="Hierarchic Group" zoom="1.0" x="417.0" y="249.5" />
+  <SelectedNodes />
   <Categories />
   <SCOPE>All</SCOPE>
   <VISIBILITY>private</VISIBILITY>
