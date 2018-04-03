@@ -1,6 +1,7 @@
 package at.htl.cdshop.entity;
 
 import javax.persistence.*;
+import java.util.LinkedList;
 import java.util.List;
 
 @Entity
@@ -12,7 +13,7 @@ public class Customer {
     @OneToMany(fetch = FetchType.EAGER,
             mappedBy = "customer",
             cascade = CascadeType.ALL)
-    private List<Order> orders;
+    private List<Order> orders = new LinkedList<>();
 
     private String firstName;
 
