@@ -9,7 +9,9 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToMany
+    @OneToMany(fetch = FetchType.EAGER,
+            mappedBy = "customer",
+            cascade = CascadeType.ALL)
     private List<Order> orders;
 
     private String firstName;
@@ -17,6 +19,16 @@ public class Customer {
     private String lastName;
 
     public Customer() {
+    }
+
+    public void addOrder(Order order) {
+        orders.add(order);
+        order.setCustomer(this);
+    }
+
+    public void removeOrder(Order order) {
+        orders.remove(order);
+        order.setCustomer(null);
     }
 
     public Customer(List<Order> orders, String firstName, String lastName) {

@@ -106,5 +106,24 @@ public class Initbean {
         li.add(o1);
 
         c1.setOrders(li);
+
+        Order o2 = new Order();
+        o2.setOrderDate(Date.valueOf(LocalDate.now()));
+
+        OrderItem oi3 = new OrderItem(o1, cd2);
+        OrderItem oi4 = new OrderItem(o1, cd3);
+
+        List<OrderItem> l1 = new LinkedList<>();
+        l1.add(oi3);
+        l1.add(oi4);
+        orderItemFacade.save(oi3);
+        orderItemFacade.save(oi4);
+
+        o2.setOrderItems(l1);
+
+        orderFacade.save(o2);
+
+        c1.addOrder(o2);
+
     }
 }
