@@ -34,6 +34,16 @@ public class CD {
         this.band.getCds().add(this);
     }
 
+    public void addTrack(Track track) {
+        tracks.add(track);
+        track.setCd(this);
+    }
+
+    public void removeTrack (Track track) {
+        tracks.remove(track);
+        track.setCd(null);
+    }
+
     public Long getId() {
         return id;
     }

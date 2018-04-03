@@ -47,8 +47,14 @@ public class Initbean {
 
         CD cd3 = new CD();
         cd3.setTitle("Creatures");
-        Track t9 = new Track("Immaculate Misconception", cd3);
-        Track t10 = new Track("We Only Come Out At Night", cd3);
+        Track t9 = new Track();
+        t9.setName("Immaculate Misconception");
+
+        Track t10 = new Track();
+        t10.setName("We Only Come Out At Night");
+
+        cd3.addTrack(t9);
+        cd3.addTrack(t10);
         b.addCD(cd3);
 
         trackFacade.save(t9);
