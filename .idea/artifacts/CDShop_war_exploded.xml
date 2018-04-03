@@ -7,6 +7,9 @@
           <element id="module-output" name="CDShop" />
         </element>
         <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.9.5" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.9.0" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.9.5" />
           <element id="library" level="project" name="Maven: javax:javaee-web-api:7.0" />
           <element id="library" level="project" name="Maven: org.primefaces:primefaces:5.3" />
           <element id="library" level="project" name="Maven: org.primefaces.extensions:all-themes:1.0.8" />

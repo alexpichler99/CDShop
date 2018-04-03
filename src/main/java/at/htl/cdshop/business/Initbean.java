@@ -45,6 +45,16 @@ public class Initbean {
         Track t4 = new Track("Reincarnate", cd1);
         Track t5 = new Track("Puppets 3", cd1);
 
+        CD cd3 = new CD();
+        cd3.setTitle("Creatures");
+        Track t9 = new Track("Immaculate Misconception", cd3);
+        Track t10 = new Track("We Only Come Out At Night", cd3);
+        b.addCD(cd3);
+
+        trackFacade.save(t9);
+        trackFacade.save(t10);
+        cdFacade.save(cd3);
+
         bandFacade.save(b);
         cdFacade.save(cd);
         trackFacade.save(t);

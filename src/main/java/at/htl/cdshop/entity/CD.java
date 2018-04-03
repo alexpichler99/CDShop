@@ -1,5 +1,7 @@
 package at.htl.cdshop.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.LinkedList;
 import java.util.List;
@@ -12,11 +14,14 @@ public class CD {
 
     private String title;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "band_id")
+    @JsonIgnore
     private Band band;
 
-    @OneToMany
+    @OneToMany(fetch = FetchType.EAGER,
+            mappedBy = "cd",
+            cascade = CascadeType.ALL)
     private List<Track> tracks = new LinkedList<>();
 
     public CD() {

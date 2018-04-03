@@ -1,5 +1,7 @@
 package at.htl.cdshop.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 @Entity
@@ -15,6 +17,8 @@ public class Track {
     private String name;
 
     @ManyToOne
+    @JoinColumn(name = "cd_id")
+    @JsonIgnore
     private CD cd;
 
     public Track() {
